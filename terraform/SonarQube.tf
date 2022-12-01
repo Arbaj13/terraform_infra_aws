@@ -3,7 +3,7 @@ resource "aws_instance" "sonarqube" {
   instance_type          = "t2.medium"
   key_name               = "awsdec"
   vpc_security_group_ids = ["sg-076688bb2766bfacc"]
-  user_data              = file("/Users/arbaj/Desktop/aws_cicd/userdata/sonarQube.sh")
+  user_data              = file("../userdata/sonarQube.sh")
   tags = {
     Name = "SonarQube Server"
   }
