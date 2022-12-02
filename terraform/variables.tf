@@ -2,8 +2,8 @@ variable "AWS_REGION" {
   default = "us-east-1"
 
 }
-variable AMIS {
-  type = map
+variable "AMIS" {
+  type = map(any)
   default = {
     us-east-2  = "ami-07efac79022b86107"
     us-east-1  = "ami-0149b2da6ceec4bb0"
@@ -21,15 +21,15 @@ variable "vpcCIDR" {
 }
 variable "instance_count" {
   default = "1"
-  
+
 }
 variable "pubkey" {
   default = "cicd.pub"
 
 }
 variable "private_key" {
-    default = "cicd"
-  
+  default = "cicd"
+
 }
 variable "vpc_name" {
   default = "cicd-VPC"
