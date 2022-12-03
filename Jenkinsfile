@@ -21,6 +21,11 @@ pipeline{
         NEXUS_LOGIN='nexuslogin'
         SONARSCANNER='sonarscanner'
         SONARSERVER='sonarserver'
+        registryCredential = 'ecr:us-east-1:IAM'
+        appRegistry = '589627010024.dkr.ecr.us-east-1.amazonaws.com/cicd'
+        vprofileRegistry = "https://589627010024.dkr.ecr.us-east-1.amazonaws.com"
+        cluster= "DevCluster"
+        service= "decsvc"
     }
     stages{
         stage('Build'){
@@ -94,6 +99,14 @@ pipeline{
                 )
             }
         }
+         stage('Build App Image') {
+            steps {
+                script {
+                    dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfile/")
+                }
+            }
+        }
+
     }
      post {
         always {
