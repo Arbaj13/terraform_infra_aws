@@ -14,7 +14,7 @@ pipeline{
         CENTRAL_REPO='arbaj-central'
         NEXUS_GRP_REPO= 'arbaj-group'
         SNAP_REPO ='arbaj-snapshot'
-        NEXUSIP= '172.31.2.137'
+        NEXUSIP= '172.31.14.226'
         NEXUSPORT= '8081'
         NEXUS_USER= 'admin'
         NEXUS_PASS= 'admin'
