@@ -1,4 +1,5 @@
 FROM openjdk:8 AS BUILD_IMAGE
+COPY . .
 RUN apt update && apt install maven -y
 RUN mvn install
 
