@@ -25,7 +25,7 @@ pipeline{
         appRegistry = '589627010024.dkr.ecr.us-east-1.amazonaws.com/cicd'
         arbajRegistry = "https://589627010024.dkr.ecr.us-east-1.amazonaws.com"
         cluster= "DevCluster"
-        service= "decsvc"
+        service= "cicd-service"
     }
     stages{
         stage('Build'){
@@ -115,6 +115,13 @@ pipeline{
               }
             }
           }
+        }
+        stage('Upload to ECS'){
+            steps{
+                withAWS(credentials: 'awscreds', region: 'us-east-1'){
+                    sh 'aws ecs update-service --cluster $(cluster) --service $(service) --force-new-deployment'
+                }
+            }
         }
 
     }
