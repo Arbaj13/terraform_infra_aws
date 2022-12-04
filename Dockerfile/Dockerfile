@@ -1,9 +1,7 @@
 FROM openjdk:8 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
 RUN git clone -b master https://github.com/Arbaj13/terraform_infra_aws.git arbaj-repo
-ENV     NEXUS_GRP_REPO='arbaj-group' \
-        NEXUSIP='172.31.14.226' \
-        NEXUSPORT='8081' 
+ENV NEXUSPORT='8081' 
 
 RUN cd arbaj-repo && mvn install
 
