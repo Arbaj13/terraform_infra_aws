@@ -9,4 +9,4 @@ FROM tomcat:8-jre11
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY --from=BUILD_IMAGE /arbaj-repo/target/Arbaj-V1.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=BUILD_IMAGE /arbaj-repo/target/Arbaj-Pathan-V1.war /usr/local/tomcat/webapps/ROOT.war
