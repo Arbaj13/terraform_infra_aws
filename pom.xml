@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>www.arbaj13.shop</groupId>
-    <artifactId>Arbaj</artifactId>
+    <artifactId>Arbaj-Pathan</artifactId>
     <packaging>war</packaging>
     <version>V1</version>
     <name>Arbaj Pathan Webapp</name>
